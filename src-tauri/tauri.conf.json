@@ -1,0 +1,64 @@
+{
+  "build": {
+    "beforeDevCommand": "cls && yarn dev",
+    "beforeBuildCommand": "cls && yarn build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Project Revive",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://26.63.86.213:3551/*", "http://localhost:3551/*", "https://fortnite-api.com/*"]
+      },
+      "shell": {
+        "all": true,
+        "execute": true
+      },
+      "all": true,
+      "protocol": {
+        "all": true,
+        "assetScope": ["*/**"]
+      },
+      "fs": {
+        "all": true,
+        "scope": ["*/**"]
+      }
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "maximizable": false,
+        "resizable": false,
+        "visible": false,
+        "title": "Project Revive",
+        "decorations": false,
+        "center": true,
+        "transparent": true,
+        "width": 480,
+        "height": 650,
+        "minWidth": 480,
+        "minHeight": 650
+      }
+    ],
+    "security": {
+      "csp": "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * data: blob:;"
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.project.launcher",
+      "icon": [
+        "icons/icon.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": []
+    }
+  }
+}
